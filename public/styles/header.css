@@ -1,0 +1,90 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    width: 100%;
+    background-color: var(--bg-primary);
+    box-shadow: 0 2px 2px -2px var(--color-secondary);
+}
+
+header > div > .container-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+header > div > .container-logo > .logo{
+    padding: var(--spacing-xs) 6px;
+    border-radius: var(--radius-primary);
+    background-color: var(--bg-tertiary);
+}
+
+header > div > .container-logo > .logo > img{
+    width: 25px;
+}
+
+header > div > .container-logo > h2{
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+header > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--screen-width);
+}
+
+header > div > .container-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    width: auto;
+}
+
+header > div > .container-buttons > .btn-create-task > img{
+    width: 20px;
+}
+
+header > div > .container-buttons > .btn-create-task{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    background-color: var(--bg-tertiary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-md);
+    border-radius: var(--radius-primary);
+    border: none;
+    color: var(--color-primary);
+    height: 40px;
+}
+
+#btn-chat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     gap: var(--spacing-sm);
+    background-color: var(--bg-primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-primary);
+    border: none;
+    font-size: var(--font-size-md);
+    color: var(--color-tertiary);
+    border: 1px solid var(--color-secondary);
+    height: 40px;
+}
+
+#btn-chat > img{
+    width: 20px;
+}
+
+
+.btn-create-task:hover,
+#btn-chat:hover {
+    animation: vibrate 0.3s linear;
+}
+

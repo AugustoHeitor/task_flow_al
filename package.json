@@ -1,0 +1,28 @@
+{
+  "name": "task_flow_al",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/google": "^0.2.12",
+    "@langchain/langgraph": "^1.5.3",
+    "@langchain/langgraph-checkpoint-postgres": "^1.1.2",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "grammy": "^1.46.0",
+    "langchain": "^1.5.19",
+    "langsmith": "^0.11.2",
+    "mysql2": "^3.24.6",
+    "pg": "^8.23.1",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4",
+    "zoid": "^9.0.86"
+  }
+}

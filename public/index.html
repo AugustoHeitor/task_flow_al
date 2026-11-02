@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/chat.css">
+    <link rel="stylesheet" href="./styles/tasks.css">
+    <link rel="stylesheet" href="./styles/users.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script defer src="./js/scroll.js"></script>
+</head>
+<body>
+    <header>
+       <div>
+            <div class="container-logo">
+                <div class="logo">
+                    <img src="./imgs/bird.svg" alt="logo">
+                </div>
+                <h2>TaskFlow</h2>
+            </div>
+            <div class="container-buttons">
+                <button id="btn-chat">
+                    <img src="./imgs/robot.svg" alt="icon">
+                    Chat
+                </button>
+                <button class="btn-create-task">
+                    <img src="./imgs/plus.svg" alt="icon">
+                    Criar Tarefa
+                </button>
+            </div>
+       </div>
+    </header>
+    <main>
+        <div>
+            <section class="section-primary">
+                <div class="card-total">
+                    <div>
+                        <span>Total Tarefas</span>
+                        <img src="./imgs/list.svg" alt="Tasks icon">
+                    </div>
+                    <span class="total">0</span>
+                </div>
+
+                <div class="card-total">
+                    <div>
+                        <span class="color-pending">Pendente</span>
+                        <img src="./imgs/clock.svg" alt="Pending icon">
+                    </div>
+                    <span class="total-pending color-pending">0</span>
+                </div>
+
+                <div class="card-total">
+                    <div>
+                        <span class="color-in-progress">Em andamento</span>
+                        <img src="./imgs/chart-line.svg" alt="In progress icon">
+                    </div>
+                    <span class="total-in-progress color-in-progress">0</span>
+                </div>
+
+                <div class="card-total">
+                    <div>
+                        <span class="color-completed">Concluída</span>
+                        <img src="./imgs/circle-check.svg" alt="Completed icon">
+                    </div>
+                    <span class="total-completed color-completed">0</span>
+                </div>
+
+                <div class="card-total">
+                    <div>
+                        <span class="color-cancelled">Cancelado</span>
+                        <img src="./imgs/circle-xmark.svg" alt="Cancelled icon">
+                    </div>
+                    <span class="total-cancelled color-cancelled">0</span>
+                </div>
+
+                <div class="card-total">
+                    <div>
+                        <span class="color-paused">Pausado</span>
+                        <img src="./imgs/circle-pause.svg" alt="Paused icon">
+                    </div>
+                    <span class="total-paused color-paused">0</span>
+                </div>
+            </section>
+            <section class="section-secondary">
+                <h3>Minhas Tarefas</h3>
+                <div class="container-columns">
+                    <div class="column" id="column-pending">
+                        <div class="column-header">
+                            <span>Pendente</span>
+                            <div class="bg-pending color-circle"></div>
+                        </div>
+                        <div class="column-body"></div>
+                    </div>
+
+                    <div class="column" id="column-in-progress">
+                        <div class="column-header">
+                            <span>Em andamento</span>
+                            <div class="bg-in-progress color-circle"></div>
+                        </div>
+                        <div class="column-body"></div>
+                    </div>
+
+                    <div class="column" id="column-completed">
+                        <div class="column-header">
+                            <span>Concluída</span>
+                            <div class="bg-completed color-circle"></div>
+                        </div>
+                        <div class="column-body"></div>
+                    </div>
+
+                    <div class="column" id="column-cancelled">
+                        <div class="column-header">
+                            <span>Cancelada</span>
+                            <div class="bg-cancelled color-circle"></div>
+                        </div>
+                        <div class="column-body"></div>
+                    </div>
+
+                    <div class="column" id="column-paused">
+                        <div class="column-header">
+                            <span>Pausada</span>
+                            <div class="bg-paused color-circle"></div>
+                        </div>
+                        <div class="column-body">
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

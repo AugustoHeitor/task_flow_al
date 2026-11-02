@@ -1,0 +1,298 @@
+
+.card-task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    width: 100%;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-primary);
+    border: 1px solid var(--color-quaternary);
+}
+
+.card-task .card-task-body{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-quaternary);
+}
+
+
+.card-task .card-task-body > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.card-task .card-task-body > div > h4{
+    font-size: var(--font-size-sm);
+    width: auto;
+}
+
+.card-task .card-task-body > p{
+    font-size: var(--font-size-sm);
+}
+
+.card-task .card-task-body > div > .container-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+
+.card-task .card-task-body > div > .container-buttons > button{
+    background-color: transparent;
+    border: none;
+}
+
+.card-task .card-task-body > div > .container-buttons > button > img{
+    width: 15px;
+}
+
+.card-task > .card-task-footer{
+    padding-top: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.card-task .card-task-footer > .task-created-at{
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+}
+
+.card-task > .card-task-footer > img{
+    width: 15px;
+}
+
+.card-task-body h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+}
+
+.card-task-body p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+}
+
+.card-task .card-task-body > div > .container-buttons > button:hover {
+    animation: vibrate 0.3s linear;
+}
+
+.modal-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-modal-screen);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.modal{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    width: 100%;
+    border-radius: var(--radius-primary);
+    border: 1px solid var(--color-quaternary);
+    gap: var(--spacing-md);
+    max-width: 500px;
+}
+
+.modal .modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    width: 100%;
+    border-bottom: 1px solid var(--color-quaternary);
+}
+
+.modal .modal-header h4{
+    font-size: var(--font-size-xl);
+}
+
+.modal .modal-header .btn-close-modal{
+    background-color: transparent;
+    border: none;
+}
+
+.modal .modal-header img{
+    width: 20px;
+}
+
+.modal .modal-body{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    flex-direction: column;
+}
+
+.modal .modal-body .container-label{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    width: 100%;
+}
+
+.modal .modal-body .container-label label{
+    font-size: var(--font-size-md);
+    color: var(--color-tertiary);
+}
+
+.modal .modal-body .container-label textarea,
+.modal .modal-body .container-label select,
+.modal .modal-body .container-label input{
+    font-size: var(--font-size-sm);
+    color: var(--color-tertiary);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--color-quaternary);
+    border-radius: var(--radius-primary);
+    padding: var(--spacing-sm);
+    width: 100%;
+}
+
+.modal .modal-body .container-label textarea{
+    height: 100px;
+}
+
+.modal .modal-footer{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--color-quaternary);
+}
+
+.modal .modal-footer > button{
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-md);
+    border-radius: var(--radius-primary);
+}
+
+.btn-cancel-modal{
+    color: var(--color-secondary);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+
+.btn-cancel-modal:hover {
+    background-color: var(--bg-secondary);
+    color: var(--color-tertiary);
+}
+
+.btn-submit-modal {
+    color: var(--color-primary);
+    font-weight: 600;
+    background-color: var(--bg-tertiary);
+}
+
+.btn-submit-modal:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+.modal-screen {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.modal-screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-screen .modal {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.97);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.modal-screen.active .modal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-screen,
+    .modal-screen .modal {
+        transition: none;
+    }
+}
+
+
+.card-task.task-arriving {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.96);
+}
+
+.card-task.task-arriving-active {
+    animation: task-arrive 4000ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes task-arrive {
+    0% {
+        opacity: 0;
+        transform: translateY(-24px) scale(0.96);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(4px) scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-task.task-arriving-active {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

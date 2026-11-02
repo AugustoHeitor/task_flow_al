@@ -1,0 +1,184 @@
+.container-users {
+
+    --u-accent: #6366f1;
+    --u-accent-strong: #4338ca;
+    --u-accent-soft: #eef2ff;
+    --u-accent-soft-hover: #e0e7ff;
+    --u-accent-border: #c7d2fe;
+    --u-border: #e2e8f0;
+    --u-text: #1e293b;
+    --u-surface: #ffffff;
+    --u-hover: #f1f5f9;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 40px;
+    width: auto;
+}
+
+.card-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-primary, 10px);
+    background-color: transparent;
+    color: var(--u-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.card-user:active {
+    transform: scale(0.98);
+}
+
+.card-user:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(99 102 241 / 25%);
+}
+
+.card-user:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.card-user-name {
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-user-avatar {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, var(--u-accent));
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.card-user-selected {
+    min-width: 190px;
+    max-width: 260px;
+    padding: 5px 12px 5px 5px;
+    border-color: var(--u-accent-border);
+    background-color: var(--u-accent-soft);
+    color: var(--u-accent-strong);
+}
+
+.card-user-selected:hover {
+    background-color: var(--u-accent-soft-hover);
+    border-color: #a5b4fc;
+}
+
+.card-user-selected.active {
+    border-color: var(--u-accent);
+    box-shadow: 0 0 0 3px rgb(99 102 241 / 18%);
+}
+
+.card-user-selected .card-user-avatar {
+    width: 30px;
+    height: 30px;
+}
+
+.card-user-arrow {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--u-accent);
+    transition: transform 0.2s ease;
+}
+
+.card-user-selected.active .card-user-arrow {
+    transform: rotate(180deg);
+}
+
+.users-list {
+    position: absolute;
+    z-index: 1000;
+    top: calc(100% + 8px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 260px;
+    max-height: 320px;
+    padding: 6px;
+    overflow-y: auto;
+    border: 1px solid var(--u-border);
+    border-radius: 14px;
+    background-color: var(--u-surface);
+    box-shadow:
+        0 4px 6px -2px rgb(15 23 42 / 6%),
+        0 12px 28px -4px rgb(15 23 42 / 14%);
+    animation: users-list-in 0.15s ease;
+}
+
+.users-list[hidden] {
+    display: none;
+}
+
+@keyframes users-list-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.users-list .card-user {
+    flex-shrink: 0;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.users-list .card-user:hover {
+    background-color: var(--u-hover);
+}
+
+.users-list .card-user.active {
+    background-color: var(--u-accent-soft);
+    color: var(--u-accent-strong);
+}
+
+.users-list .card-user.active::after {
+    content: "";
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@media (max-width: 600px) {
+    .card-user-selected {
+        min-width: 0;
+        max-width: 170px;
+    }
+
+    .users-list {
+        width: min(260px, calc(100vw - 32px));
+    }
+}
